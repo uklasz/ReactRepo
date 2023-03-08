@@ -62,11 +62,13 @@ const generateToken = () => {
       else if(result.length === 0) res.json({
         auth: false,
         token: null})
-    else {
-      const user = result[0]
-      res.json({
-        auth: true,
-        token: generateToken(),
-        name: user.Name + ' ' + user.Surname
-      })
+      else {
+        const user = result[0]
+        res.json({
+          auth: true,
+          token: generateToken(),
+          name: user.Name + ' ' + user.Surname
+        })
+      }
+    })
   });
